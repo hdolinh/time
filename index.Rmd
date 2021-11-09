@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Created Index for  *Time* lab
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 # get libraries
 if (!require(librarian)){
