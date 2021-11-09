@@ -1,0 +1,50 @@
+---
+title: "Index"
+author: "Halina Do-Linh"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Created Index for  *Time* lab
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# get libraries
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+librarian::shelf(
+  clockify, dplyr, DT, glue, lubridate, readr)
+
+# CHANGE THESE VARIABLES!
+api_txt <- "~/Desktop/private/clockify_api_key.txt"
+project_name <- "la-tree"
+
+# use API key to authenticate
+CLOCKIFY_API_KEY <- readLines(api_txt)
+set_api_key(CLOCKIFY_API_KEY)
+
+# get data
+d_projects <- projects() %>% 
+      select(project_id, project_name)
+d_users <- users() %>% 
+      select(user_id, user_name)
+d_times <- time_entries(concise = F) %>% 
+  left_join(
+    d_projects, by = "project_id") %>% 
+  left_join(
+    d_users, by = "user_id")
+
+# show table
+d_times %>% 
+  select(
+    user_name, project_name, 
+    time_start, duration, description) %>% 
+  arrange(user_name, project_name, time_start) %>% 
+  datatable() %>%
+  formatRound(columns=c('duration'), digits=3)
+```
+
