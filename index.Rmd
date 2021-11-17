@@ -47,5 +47,7 @@ d_times %>%
   arrange(user_name, project_name, time_start) %>% 
   datatable() %>%
   formatRound(columns=c('duration'), digits=3)
+  
+# new comment for referencing git hub commit
 ```
 
