@@ -5,6 +5,8 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
+## Welcome
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(here)
@@ -46,6 +48,8 @@ d_times %>%
   arrange(user_name, project_name, time_start) %>% 
   datatable() %>%
   formatRound(columns=c('duration'), digits=3)
+  
+# new comment for referencing git hub commit
 ```
 
 
