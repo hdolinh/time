@@ -125,7 +125,7 @@ d_task <- d_times %>%
 plot_burndown(
   d_task,
   beg = as.Date("2021-10-31"), # day before
-  end = as.Date("2021-11-08"), # day after
+  end = as.Date("2021-11-09"), # day after
   hrs = 15)
 
 datatable(d_task)
@@ -141,7 +141,7 @@ d_task <- d_times %>%
 plot_burndown(
   d_task,
   beg = as.Date("2021-11-07"), # day before
-  end = as.Date("2021-11-21"), # day after
+  end = as.Date("2021-11-22"), # day after
   hrs = 10)
 
 datatable(d_task)
@@ -178,3 +178,19 @@ plot_burndown(
 
 datatable(d_task)
 ```
+
+## Interpretation
+
+- The overall project is under-budget because it took less hours than we predicted. 
+
+- The burndown for the Import task used up exactly 20 hours, which we planned for. Import we finished within our planned hours, but we finished the task earlier than expected.
+
+- The burndown for Tidy task starts with 15 hours and only used 10 hours total, leaving an excess of 5 hours under budget. Tidy took less time than we planned and we finished on time.
+
+- The burndown for Transform task starts with 10 hours and only used 6 hours total, leaving an excess of 4 hours under budget. Transform took less time than we planned and we finished before the initial deadline.
+
+- The burndown for Visualize task starts with 15 hours, but we used 18.5 hours so we were 3.5 hours over budget. Visualize took more time time than than we planned, but we finished on time.
+
+- The burndown for Communicate task starts with 20 hours, but we used 20.15 hours so we were 15 minutes over budget. Communicate took more time than we planned, but we finished on time.
+
+
