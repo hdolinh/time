@@ -179,6 +179,7 @@ plot_burndown(
 datatable(d_task)
 ```
 
+
 ## Interpretation
 
 - The overall project is under-budget because it took less hours than we predicted. 
@@ -192,5 +193,4 @@ datatable(d_task)
 - The burndown for Visualize task starts with 15 hours, but we used 18.5 hours so we were 3.5 hours over budget. Visualize took more time time than than we planned, but we finished on time.
 
 - The burndown for Communicate task starts with 20 hours, but we used 20.15 hours so we were 15 minutes over budget. Communicate took more time than we planned, but we finished on time.
-
 
